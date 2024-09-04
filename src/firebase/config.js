@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBQyvaaeDP6VafR7RK16NxguFnErP5-UrM",
-  authDomain: "firegram-7381d.firebaseapp.com",
-  projectId: "firegram-7381d",
-  storageBucket: "firegram-7381d.appspot.com",
-  messagingSenderId: "257480143557",
-  appId: "1:257480143557:web:eb98dfc40c3d4a86e436ac",
+  apiKey: `${process.env.FIREBASE_API_KEY}`,
+  authDomain: `${process.env.FIREBASE_AUTH_DOMAIN}`,
+  projectId: `${process.env.FIREBASE_PROJECT_ID}`,
+  storageBucket: `${process.env.FIREBASE_STORAGE_BUCKET}`,
+  messagingSenderId: `${process.env.FIREBASE_MSG_SENDER_ID}`,
+  appId: `${process.env.FIREBASE_APP_ID}`,
 };
 
 // Initialize Firebase
