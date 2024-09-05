@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ProgressBar from "../ProgressBar/ProgressBar";
-import useStorage from "../../hooks/useStorage";
+import { ProgressBar, ImageGrid } from "../../components";
 
 import "./home_page.css";
 
@@ -19,13 +18,14 @@ const HomePage = () => {
       setError("");
     } else {
       setFile(null);
-      setError("Please select an image file (png or jpeg");
+      setError("Please select an image file (png or jpeg)");
     }
   };
 
   return (
     <div className="something">
       <h1>Photo Gallery</h1>
+      <Link to="/login">Login</Link>
       <form>
         <label>
           <input
@@ -38,9 +38,8 @@ const HomePage = () => {
         {error && <div className="error-message"> {error}</div>}
         {file && <div> {file.name}</div>}
         {file && <ProgressBar file={file} setFile={setFile} />}
+        <ImageGrid />
       </form>
-
-      <Link to="/login">Login</Link>
     </div>
   );
 };
