@@ -36,7 +36,6 @@ const HomePage = () => {
           <span>+</span>
         </label>
         {error && <div className="error-message"> {error}</div>}
-        {file && <div> {file.name}</div>}
         {file && <ProgressBar file={file} setFile={setFile} />}
         <ImageGrid />
       </form>

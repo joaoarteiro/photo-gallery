@@ -70,7 +70,7 @@ const useStorage = (file) => {
 
           // Store data in database
           await addDoc(collection(dataBase, "images"), {
-            imageUrl: downloadURL,
+            url: downloadURL,
             createdAt: new Date(),
           });
         } catch (error) {

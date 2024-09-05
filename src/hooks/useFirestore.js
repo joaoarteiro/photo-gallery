@@ -13,7 +13,7 @@ const useFirestore = (collectionName) => {
         setIsLoading(true);
         const q = query(
           collection(dataBase, collectionName),
-          orderBy("createdAt")
+          orderBy("createdAt", "desc")
         );
         unsubscribe = onSnapshot(q, (querySnapshot) => {
           const images = [];
