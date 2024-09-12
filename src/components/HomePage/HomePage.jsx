@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ProgressBar, ImageGrid } from "../../components";
+import { ProgressBar, ImageGrid, Modal } from "../../components";
 
 import "./home_page.css";
 
 const HomePage = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
 
   const validTypes = ["image/png", "image/jpeg", "image/jpg"];
 
@@ -23,9 +24,10 @@ const HomePage = () => {
   };
 
   return (
-    <div className="something">
-      <h1>Photo Gallery</h1>
-      <Link to="/login">Login</Link>
+    <div className="page-container">
+      <h1>Firegram</h1>
+      <h2>João's gallery</h2>
+      {/* <Link to="/login">Login</Link> */}
       <form>
         <label>
           <input
@@ -35,9 +37,14 @@ const HomePage = () => {
           />
           <span>+</span>
         </label>
-        {error && <div className="error-message"> {error}</div>}
-        {file && <ProgressBar file={file} setFile={setFile} />}
-        <ImageGrid />
+        <div className="output">
+          {error && <div className="error-message"> {error}</div>}
+          {file && <ProgressBar file={file} setFile={setFile} />}
+        </div>
+        <ImageGrid setSelectedImg={setSelectedImg} />
+        {selectedImg && (
+          <Modal image={selectedImg} setSelectedImg={setSelectedImg} />
+        )}
       </form>
     </div>
   );

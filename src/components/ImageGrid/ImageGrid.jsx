@@ -1,7 +1,7 @@
 import useFirestore from "../../hooks/useFirestore";
 import "./image_grid.css";
 
-const ImageGrid = () => {
+const ImageGrid = ({ setSelectedImg }) => {
   const { docs: images, isLoading } = useFirestore("images");
 
   if (isLoading) {
@@ -11,7 +11,11 @@ const ImageGrid = () => {
   return images.length ? (
     <div className="img-grid">
       {images.map((img, index) => (
-        <div className="img-wrap" key={index}>
+        <div
+          className="img-wrap"
+          key={index}
+          onClick={() => setSelectedImg(img.url)}
+        >
           <img src={img.url} alt="uploaded image" />
         </div>
       ))}
