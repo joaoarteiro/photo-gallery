@@ -26,7 +26,7 @@ const HomePage = () => {
   return (
     <div className="page-container">
       <h1>Firegram</h1>
-      <h2>João's gallery</h2>
+      <h2>Iceland</h2>
       {/* <Link to="/login">Login</Link> */}
       <form>
         <label>

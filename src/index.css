@@ -18,7 +18,7 @@
 }
 
 body {
-  max-width: 960px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
@@ -57,12 +57,16 @@ h2 {
   }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #2a9d8f;
+    background-color: #0c1618;
   }
-  a:hover {
-    color: #747bff;
+  h1 {
+    color: #faf4d3;
+  }
+  .loading-spinner {
+    border: 2px solid #faf4d3;
+    border-top-color: #004643;
   }
 }
