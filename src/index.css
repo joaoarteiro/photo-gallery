@@ -46,6 +46,21 @@ h2 {
   -webkit-animation: spin 1s ease-in-out infinite;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container button {
+  color: var(--secondary);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
+
 @keyframes spin {
   to {
     -webkit-transform: rotate(360deg);

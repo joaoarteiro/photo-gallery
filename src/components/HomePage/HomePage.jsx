@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ProgressBar, ImageGrid, Modal } from "../../components";
-
+import { useState } from "react";
+import { Header, ProgressBar, ImageGrid, Modal } from "../../components";
 import "./home_page.css";
 
 const HomePage = () => {
@@ -25,10 +23,9 @@ const HomePage = () => {
 
   return (
     <div className="page-container">
-      <h1>Firegram</h1>
+      <Header />
       <h2>Iceland</h2>
-      {/* <Link to="/login">Login</Link> */}
-      <form>
+      <form className="upload-form">
         <label>
           <input
             onChange={changeHandler}
