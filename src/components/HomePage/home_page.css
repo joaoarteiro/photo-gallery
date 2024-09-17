@@ -1,16 +1,16 @@
 /* upload form styles */
-form {
+.upload-form {
   margin: 30px auto 10px;
   text-align: center;
 }
 
-label input {
+.upload-form label input {
   height: 0;
   width: 0;
   opacity: 0;
 }
 
-label {
+.upload-form label {
   display: block;
   width: 30px;
   height: 30px;
@@ -23,7 +23,7 @@ label {
   font-size: 24px;
 }
 
-label:hover {
+.upload-form label:hover {
   background: var(--primary);
   color: white;
   cursor: pointer;
@@ -40,3 +40,14 @@ label:hover {
 .page-container {
   text-align: left;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  label {
+    border: 1px solid #faf4d3;
+    color: #faf4d3;
+  }
+  label:hover {
+    background: #faf4d3;
+    color: #0c1618;
+  }
+} */

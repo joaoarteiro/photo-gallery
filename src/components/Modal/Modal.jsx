@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import "./modal.css";
 
 const Modal = ({ image, setSelectedImg }) => {
@@ -6,9 +7,14 @@ const Modal = ({ image, setSelectedImg }) => {
   };
 
   return (
-    <div className="backdrop" onClick={handleCloseModal}>
+    <motion.div
+      className="backdrop"
+      onClick={handleCloseModal}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <img src={image} alt="enlarged pic" />
-    </div>
+    </motion.div>
   );
 };
 
