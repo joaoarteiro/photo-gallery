@@ -9,6 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const validForm = email && password;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +46,12 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Log In</button>
+        <button
+          className={`login-btn ${!validForm ? "--disabled" : ""}`}
+          type="submit"
+        >
+          Log In
+        </button>
       </form>
     </div>
   );

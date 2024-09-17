@@ -41,7 +41,7 @@
   text-align: left;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   label {
     border: 1px solid #faf4d3;
     color: #faf4d3;
@@ -50,4 +50,4 @@
     background: #faf4d3;
     color: #0c1618;
   }
-}
+} */
