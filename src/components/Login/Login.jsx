@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/config";
@@ -9,16 +9,26 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const validForm = email && password;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email && password) {
       try {
-        await signInWithEmailAndPassword(auth, email, password);
-        navigate("/");
+        setIsLoading(true);
+        const response = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        if (response) {
+          navigate("/");
+          setIsLoading(false);
+        }
       } catch (error) {
         setError(error.message);
+        setIsLoading(false);
       }
     }
   };
@@ -26,33 +36,34 @@ const Login = () => {
   return (
     <div className="login-page">
       <h1>Firegram</h1>
-      <form className="login-form" onSubmit={handleSubmit}>
-        {error && error}
-        <label htmlFor="email">email</label>
-        <input
-          type="email"
-          placeholder="youremail@gmail.com"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password">password</label>
-        <input
-          type="password"
-          placeholder="********"
-          name="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button
-          className={`login-btn ${!validForm ? "--disabled" : ""}`}
-          type="submit"
-        >
-          Log In
-        </button>
-      </form>
+      <div className="login-card">
+        <div className="login-image"></div>
+        <form className="login-form" onSubmit={handleSubmit}>
+          {error && <div className="error-message">{error}</div>}
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button
+            className={`login-btn ${!validForm ? "--disabled" : ""}`}
+            type="submit"
+          >
+            {isLoading ? <div className="loading-spinner --small" /> : "Log In"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

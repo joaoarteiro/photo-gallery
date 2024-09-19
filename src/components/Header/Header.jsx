@@ -5,6 +5,7 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      localStorage.removeItem("authenticatedUser");
     } catch (error) {
       console.log(error.message);
     }
@@ -13,9 +14,7 @@ const Header = () => {
   return (
     <div className="header-container">
       <h1>Firegram</h1>
-      <button onClick={handleLogout} type="reset">
-        Log Out
-      </button>
+      <button onClick={handleLogout}>Log Out</button>
     </div>
   );
 };

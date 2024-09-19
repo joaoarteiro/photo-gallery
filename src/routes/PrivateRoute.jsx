@@ -3,7 +3,8 @@ import useAuth from "../hooks/useAuth";
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth();
-  if (user) {
+  const isAuthenticated = localStorage.getItem("authenticatedUser");
+  if (user || isAuthenticated) {
     return children;
   } else return <Navigate to="/login" />;
 };

@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import { bucket, dataBase } from "../firebase/config";
-import {
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-  listAll,
-} from "firebase/storage";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, doc, addDoc } from "firebase/firestore";
+import useAuth from "../hooks/useAuth";
 
 const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
+
+  const { user } = useAuth();
 
   useEffect(() => {
     // references
@@ -72,6 +70,7 @@ const useStorage = (file) => {
           await addDoc(collection(dataBase, "images"), {
             url: downloadURL,
             createdAt: new Date(),
+            uploadedBy: user.email,
           });
         } catch (error) {
           setError(error);
