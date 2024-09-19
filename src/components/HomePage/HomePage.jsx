@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Header, ProgressBar, ImageGrid, Modal } from "../../components";
+import useAuth from "../../hooks/useAuth";
 import "./home_page.css";
 
 const HomePage = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const [selectedImg, setSelectedImg] = useState(null);
+
+  const { user } = useAuth();
+  localStorage.setItem("authenticatedUser", user?.email);
 
   const validTypes = ["image/png", "image/jpeg", "image/jpg"];
 

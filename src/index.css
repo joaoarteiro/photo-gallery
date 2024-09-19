@@ -3,9 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: var(--secondary);
-  background-color: #ffffff;
+  background-color: #fafafa;
 
   --primary: #efb6b2;
   --secondary: #4e4e4e;
@@ -44,6 +43,11 @@ h2 {
   border-top-color: #fff;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
+
+  &.--small {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .header-container {

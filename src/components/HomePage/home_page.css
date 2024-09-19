@@ -30,8 +30,10 @@
 }
 
 .error-message {
+  font-size: 14px;
   color: var(--error);
 }
+
 .output {
   height: 60px;
   font-size: 0.8rem;
