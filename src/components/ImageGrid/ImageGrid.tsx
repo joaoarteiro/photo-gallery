@@ -2,7 +2,11 @@ import useFirestore from "../../hooks/useFirestore";
 import { motion } from "framer-motion";
 import "./image_grid.css";
 
-const ImageGrid = ({ setSelectedImg }) => {
+type ImageGridProps = {
+  setSelectedImg: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
+const ImageGrid = ({ setSelectedImg }: ImageGridProps) => {
   const { docs: images, isLoading } = useFirestore("images");
 
   if (isLoading) {

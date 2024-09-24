@@ -87,17 +87,3 @@ h2 {
     max-width: 500px;
   }
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    color: #2a9d8f;
-    background-color: #0c1618;
-  }
-  h1 {
-    color: #faf4d3;
-  }
-  .loading-spinner {
-    border: 2px solid #faf4d3;
-    border-top-color: #004643;
-  }
-} */
