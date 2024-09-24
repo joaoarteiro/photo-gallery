@@ -2,12 +2,18 @@ import { useState, useEffect } from "react";
 import { dataBase } from "../firebase/config";
 import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 
-const useFirestore = (collectionName) => {
-  const [docs, setDocs] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+type Image = {
+  url: string;
+  createdAt: Date;
+  uploadedBy: string;
+};
+
+const useFirestore = (collectionName: string) => {
+  const [docs, setDocs] = useState<Image[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    let unsubscribe;
+    let unsubscribe: any;
     const getData = async () => {
       try {
         setIsLoading(true);
@@ -16,7 +22,7 @@ const useFirestore = (collectionName) => {
           orderBy("createdAt", "desc")
         );
         unsubscribe = onSnapshot(q, (querySnapshot) => {
-          const images = [];
+          const images: any = [];
           querySnapshot.forEach((doc) => {
             images.push(doc.data());
           });

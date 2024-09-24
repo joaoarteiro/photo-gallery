@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage, Login } from "./components";
-import { AuthProvider } from "./context/authentication";
+import { AuthProvider } from "./context/auth";
 import PrivateRoute from "./routes/PrivateRoute";
 import "./index.css";
 
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <AuthProvider>
     <RouterProvider router={router} />
   </AuthProvider>

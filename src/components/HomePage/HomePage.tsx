@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { Header, ProgressBar, ImageGrid, Modal } from "../../components";
+import { Header, ProgressBar, ImageGrid, Modal } from "..";
 import useAuth from "../../hooks/useAuth";
 import "./home_page.css";
 
 const HomePage = () => {
-  const [file, setFile] = useState(null);
-  const [error, setError] = useState(null);
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   const { user } = useAuth();
-  localStorage.setItem("authenticatedUser", user?.email);
+  localStorage.setItem("authenticatedUser", user?.email!);
 
   const validTypes = ["image/png", "image/jpeg", "image/jpg"];
 
-  const changeHandler = (e) => {
-    let selected = e.target.files[0];
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let selected = e.target.files?.[0];
 
     if (selected && validTypes.includes(selected.type)) {
       setFile(selected);
