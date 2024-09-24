@@ -74,7 +74,7 @@
 
   .login-card {
     max-width: 350px;
-    height: 75vh;
+    height: 70vh;
     box-shadow: none;
   }
 
@@ -95,6 +95,8 @@
   .login-form input {
     margin: 0 0 50px 0;
     padding: 15px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
   }
 
   .login-form label {
