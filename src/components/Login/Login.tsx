@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signInAnonymously } from "firebase/auth";
 import { auth } from "../../firebase/config";
 import "./login.css";
 
@@ -33,6 +33,21 @@ const Login = () => {
     }
   };
 
+  const handleGuestLogin = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    try {
+      setIsLoading(true);
+      const response = await signInAnonymously(auth);
+      if (response) {
+        navigate("/");
+        setIsLoading(false);
+      }
+    } catch (error) {
+      setError(error.message);
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="login-page">
       <h1>Firegram</h1>
@@ -62,6 +77,10 @@ const Login = () => {
           >
             {isLoading ? <div className="loading-spinner --small" /> : "Log In"}
           </button>
+          <p>
+            Don't have an account? Log in as
+            <span onClick={handleGuestLogin}> guest</span>
+          </p>
         </form>
       </div>
     </div>

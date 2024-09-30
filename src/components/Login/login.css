@@ -32,6 +32,16 @@
   background: transparent;
 }
 
+.login-form p {
+  font-size: 12px;
+
+  span {
+    color: #93bcee;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+
 .login-btn {
   border: none;
   color: #ffffff;
@@ -101,5 +111,10 @@
 
   .login-form label {
     font-size: 18px;
+  }
+
+  .login-form p {
+    font-size: 16px;
+    text-align: center;
   }
 }

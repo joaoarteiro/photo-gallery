@@ -10,6 +10,7 @@ const HomePage = () => {
 
   const { user } = useAuth();
   localStorage.setItem("authenticatedUser", user?.email!);
+  const isGuestUser = user?.isAnonymous;
 
   const validTypes = ["image/png", "image/jpeg", "image/jpg"];
 
@@ -30,18 +31,22 @@ const HomePage = () => {
       <Header />
       <h2>Iceland</h2>
       <form className="upload-form">
-        <label>
-          <input
-            onChange={changeHandler}
-            type="file"
-            accept=".png,.jpeg,.jpg"
-          />
-          <span>+</span>
-        </label>
-        <div className="output">
-          {error && <div className="error-message"> {error}</div>}
-          {file && <ProgressBar file={file} setFile={setFile} />}
-        </div>
+        {!isGuestUser && (
+          <>
+            <label>
+              <input
+                onChange={changeHandler}
+                type="file"
+                accept=".png,.jpeg,.jpg"
+              />
+              <span>+</span>
+            </label>
+            <div className="output">
+              {error && <div className="error-message"> {error}</div>}
+              {file && <ProgressBar file={file} setFile={setFile} />}
+            </div>
+          </>
+        )}
         <ImageGrid setSelectedImg={setSelectedImg} />
         {selectedImg && (
           <Modal image={selectedImg} setSelectedImg={setSelectedImg} />
