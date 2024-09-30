@@ -7,8 +7,11 @@ type ModalProps = {
 };
 
 const Modal = ({ image, setSelectedImg }: ModalProps) => {
+  //TODO: Check for alternative way of disabling scroll
+  // document.body.style.overflow = "hidden";
   const handleCloseModal = () => {
     setSelectedImg(null);
+    // document.body.style.overflow = "unset";
   };
 
   return (
