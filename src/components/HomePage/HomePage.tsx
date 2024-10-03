@@ -30,28 +30,26 @@ const HomePage = () => {
     <div className="page-container">
       <Header />
       <h2>Iceland</h2>
-      <form className="upload-form">
-        {!isGuestUser && (
-          <>
-            <label>
-              <input
-                onChange={changeHandler}
-                type="file"
-                accept=".png,.jpeg,.jpg"
-              />
-              <span>+</span>
-            </label>
-            <div className="output">
-              {error && <div className="error-message"> {error}</div>}
-              {file && <ProgressBar file={file} setFile={setFile} />}
-            </div>
-          </>
-        )}
-        <ImageGrid setSelectedImg={setSelectedImg} />
-        {selectedImg && (
-          <Modal image={selectedImg} setSelectedImg={setSelectedImg} />
-        )}
-      </form>
+      {!isGuestUser && (
+        <form className="upload-form">
+          <label>
+            <input
+              onChange={changeHandler}
+              type="file"
+              accept=".png,.jpeg,.jpg"
+            />
+            <span>+</span>
+          </label>
+          <div className="output">
+            {error && <div className="error-message"> {error}</div>}
+            {file && <ProgressBar file={file} setFile={setFile} />}
+          </div>
+        </form>
+      )}
+      <ImageGrid setSelectedImg={setSelectedImg} />
+      {selectedImg && (
+        <Modal image={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </div>
   );
 };
