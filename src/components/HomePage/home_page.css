@@ -1,6 +1,7 @@
 /* upload form styles */
 .upload-form {
-  margin: 30px auto 10px;
+  display: flex;
+  margin: 40px auto;
   text-align: center;
 }
 

@@ -10,7 +10,11 @@ const ImageGrid = ({ setSelectedImg }: ImageGridProps) => {
   const { docs: images, isLoading } = useFirestore("images");
 
   if (isLoading) {
-    return <div className="loading-spinner" />;
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner --primary" />
+      </div>
+    );
   }
 
   return images.length ? (
