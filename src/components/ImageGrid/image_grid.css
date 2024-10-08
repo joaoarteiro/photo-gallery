@@ -28,6 +28,12 @@
   transform: translate(-50%, -50%);
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1100px) {
   .img-grid {
     margin: 15px auto;
