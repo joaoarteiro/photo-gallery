@@ -51,15 +51,16 @@
   margin-top: 35px;
   font-size: 16px;
   font-weight: 500;
-  background: #93bcee;
+  background: #73a8e9;
+}
 
-  &.--disabled {
-    pointer-events: none;
-  }
+.login-btn.--disabled {
+  pointer-events: none;
+  background: #93bcee;
 }
 
 .login-btn:hover {
-  background: #73a8e9;
+  background: #93bcee;
 }
 
 .login-card {

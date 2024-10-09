@@ -1,10 +1,10 @@
-.header-container {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header-container button {
+header button {
   color: var(--secondary);
   border: none;
   background: none;
@@ -15,11 +15,11 @@
 }
 
 @media (max-width: 700px) {
-  .header-container {
+  header {
     margin-left: 10px;
   }
 
-  .header-container button {
+  header button {
     padding: 4px 10px;
   }
 }

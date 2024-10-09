@@ -16,10 +16,3 @@
   max-width: 80%;
   max-height: 80%;
 }
-
-@media (max-width: 1100px) {
-  .backdrop img {
-    max-width: 70%;
-    max-height: 70%;
-  }
-}

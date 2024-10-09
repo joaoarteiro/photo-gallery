@@ -19,10 +19,10 @@ const ImageGrid = ({ setSelectedImg }: ImageGridProps) => {
 
   return images.length ? (
     <div className="img-grid">
-      {images.map((img, index) => (
+      {images.map((img) => (
         <motion.div
           className="img-wrap"
-          key={index}
+          key={img.id}
           onClick={() => setSelectedImg(img.url)}
           whileHover={{ opacity: 1 }}
           layout
