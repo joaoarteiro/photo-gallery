@@ -34,6 +34,14 @@
   align-items: center;
 }
 
+.no-images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+}
+
 @media (max-width: 1100px) {
   .img-grid {
     margin: 15px auto;

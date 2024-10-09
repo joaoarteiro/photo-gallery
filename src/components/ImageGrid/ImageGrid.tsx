@@ -38,7 +38,9 @@ const ImageGrid = ({ setSelectedImg }: ImageGridProps) => {
       ))}
     </div>
   ) : (
-    <h1>No images found, please upload some</h1>
+    <div className="no-images-container">
+      <h1>No images found, please upload some</h1>
+    </div>
   );
 };
 
