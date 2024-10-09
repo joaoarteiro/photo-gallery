@@ -79,7 +79,7 @@ const Login = () => {
           </button>
           <p>
             Don't have an account? Log in as
-            <span onClick={handleGuestLogin}> guest</span>
+            <span onClick={handleGuestLogin}> Guest</span>
           </p>
         </form>
       </div>

@@ -6,6 +6,7 @@ type Image = {
   url: string;
   createdAt: Date;
   uploadedBy: string;
+  id: string;
 };
 
 const useFirestore = (collectionName: string) => {
@@ -24,7 +25,7 @@ const useFirestore = (collectionName: string) => {
         unsubscribe = onSnapshot(q, (querySnapshot) => {
           const images: any = [];
           querySnapshot.forEach((doc) => {
-            images.push(doc.data());
+            images.push({ ...doc.data(), id: doc.id });
           });
           setDocs(images);
           setIsLoading(false);

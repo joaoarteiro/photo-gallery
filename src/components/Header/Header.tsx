@@ -13,10 +13,10 @@ const Header = () => {
   };
 
   return (
-    <div className="header-container">
+    <header>
       <h1>Firegram</h1>
       <button onClick={handleLogout}>Log Out</button>
-    </div>
+    </header>
   );
 };
 
