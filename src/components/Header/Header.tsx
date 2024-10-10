@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Firegram</h1>
+      <h1>Snapvault</h1>
       <button onClick={handleLogout}>Log Out</button>
     </header>
   );
