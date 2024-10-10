@@ -50,7 +50,7 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <h1>Firegram</h1>
+      <h1>Snapvault</h1>
       <div className="login-card">
         <div className="login-image"></div>
         <form className="login-form" onSubmit={handleSubmit}>
