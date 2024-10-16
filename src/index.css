@@ -17,8 +17,7 @@
 }
 
 body {
-  max-width: 1024px;
-  margin: 0 auto;
+  /*some styles*/
 }
 
 h1 {
@@ -69,6 +68,24 @@ h2 {
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  color: #4e4e4e;
+  height: 25px;
+  text-align: center;
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
 }
 
 @keyframes spin {
