@@ -41,5 +41,6 @@
 }
 
 .page-container {
-  text-align: left;
+  max-width: 1024px;
+  margin: 0 auto;
 }
