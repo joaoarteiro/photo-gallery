@@ -7,6 +7,7 @@ type ImageGridProps = {
 };
 
 const ImageGrid = ({ setSelectedImg }: ImageGridProps) => {
+  //values returned from the hook, are treated as props, thus if any value changes, it will trigger a re-render of ImageGrid
   const { docs: images, isLoading } = useFirestore("images");
 
   if (isLoading) {
@@ -17,7 +18,15 @@ const ImageGrid = ({ setSelectedImg }: ImageGridProps) => {
     );
   }
 
-  return images.length ? (
+  if (!isLoading && images.length === 0) {
+    return (
+      <div className="no-images-container">
+        <h1>This album is empty, please upload some images</h1>
+      </div>
+    );
+  }
+
+  return (
     <div className="img-grid">
       {images.map((img) => (
         <motion.div
@@ -36,10 +45,6 @@ const ImageGrid = ({ setSelectedImg }: ImageGridProps) => {
           />
         </motion.div>
       ))}
-    </div>
-  ) : (
-    <div className="no-images-container">
-      <h1>No images found, please upload some</h1>
     </div>
   );
 };
