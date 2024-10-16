@@ -36,7 +36,7 @@
   font-size: 12px;
 
   span {
-    color: #93bcee;
+    color: #a0c2ec;
     font-weight: 500;
     cursor: pointer;
   }
@@ -56,11 +56,11 @@
 
 .login-btn.--disabled {
   pointer-events: none;
-  background: #93bcee;
+  background: #a0c2ec;
 }
 
 .login-btn:hover {
-  background: #93bcee;
+  background: #a0c2ec;
 }
 
 .login-card {
