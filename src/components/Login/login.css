@@ -4,8 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
   min-height: 100vh;
   background: #fafafa;
 }
@@ -96,6 +94,7 @@
   .login-form {
     padding: 40px 10px;
     background: #fafafa;
+    width: 300px;
   }
 
   .login-btn {
@@ -111,11 +110,11 @@
   }
 
   .login-form label {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .login-form p {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
 }
