@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Header, ProgressBar, ImageGrid, Modal } from "..";
+import { useState, useEffect } from "react";
+import { Header, ProgressBar, ImageGrid, Modal } from "../";
+import Footer from "../shared/Footer/Footer";
 import useAuth from "../../hooks/useAuth";
 import "./home_page.css";
 
@@ -26,6 +27,12 @@ const HomePage = () => {
     }
   };
 
+  useEffect(() => {
+    console.log(
+      "You like to poke around? Find the source code for this project on: https://github.com/joaoarteiro/photo-gallery"
+    );
+  }, []);
+
   return (
     <div className="page-container">
       <Header />
@@ -50,6 +57,7 @@ const HomePage = () => {
       {selectedImg && (
         <Modal image={selectedImg} setSelectedImg={setSelectedImg} />
       )}
+      <Footer />
     </div>
   );
 };
