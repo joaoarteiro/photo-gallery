@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signInAnonymously } from "firebase/auth";
 import { auth } from "../../firebase/config";
+import Footer from "../shared/Footer/Footer";
 import "./login.css";
 
 const Login = () => {
@@ -49,41 +50,48 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page">
-      <h1>Snapvault</h1>
-      <div className="login-card">
-        <div className="login-image"></div>
-        <form className="login-form" onSubmit={handleSubmit}>
-          {error && <div className="error-message">{error}</div>}
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button
-            className={`login-btn ${!validForm ? "--disabled" : ""}`}
-            type="submit"
-          >
-            {isLoading ? <div className="loading-spinner --small" /> : "Log In"}
-          </button>
-          <p>
-            Don't have an account? Log in as
-            <span onClick={handleGuestLogin}> Guest</span>
-          </p>
-        </form>
+    <>
+      <div className="login-page">
+        <h1>Snapvault</h1>
+        <div className="login-card">
+          <div className="login-image"></div>
+          <form className="login-form" onSubmit={handleSubmit}>
+            {error && <div className="error-message">{error}</div>}
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button
+              className={`login-btn ${!validForm ? "--disabled" : ""}`}
+              type="submit"
+            >
+              {isLoading ? (
+                <div className="loading-spinner --small" />
+              ) : (
+                "Log In"
+              )}
+            </button>
+            <p>
+              Don't have an account? Log in as
+              <span onClick={handleGuestLogin}> Guest</span>
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

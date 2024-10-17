@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage, Login } from "./components";
-import Layout from "./components/Layout/Layout";
 import { AuthProvider } from "./context/auth";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
@@ -9,25 +8,20 @@ import "./index.css";
 
 const router = createBrowserRouter([
   {
-    element: <Layout />,
-    children: [
-      {
-        path: "/login",
-        element: (
-          <PublicRoute>
-            <Login />
-          </PublicRoute>
-        ),
-      },
-      {
-        path: "/",
-        element: (
-          <PrivateRoute>
-            <HomePage />
-          </PrivateRoute>
-        ),
-      },
-    ],
+    path: "/login",
+    element: (
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    ),
+  },
+  {
+    path: "/",
+    element: (
+      <PrivateRoute>
+        <HomePage />
+      </PrivateRoute>
+    ),
   },
 ]);
 
