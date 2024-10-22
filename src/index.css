@@ -17,7 +17,8 @@
 }
 
 body {
-  /*some styles*/
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -99,17 +100,7 @@ footer p {
   }
 }
 
-@media (max-width: 1100px) {
-  body {
-    max-width: 700px;
-  }
-}
-
 @media (max-width: 700px) {
-  body {
-    max-width: 500px;
-  }
-
   h2 {
     margin-top: 30px;
     font-size: 2.2rem;

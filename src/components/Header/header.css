@@ -13,13 +13,3 @@ header button {
   font-size: 14px;
   padding: 0;
 }
-
-@media (max-width: 700px) {
-  header {
-    margin-left: 10px;
-  }
-
-  header button {
-    padding: 4px 10px;
-  }
-}

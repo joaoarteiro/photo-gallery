@@ -76,7 +76,7 @@
   background-size: cover;
 }
 
-@media (max-width: 475px) {
+@media (max-width: 500px) {
   .login-image {
     display: none;
   }
