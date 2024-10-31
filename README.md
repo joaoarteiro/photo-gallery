@@ -1,8 +1,17 @@
-# React + Vite
+# Snapvault
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Snapvault is a photo gallery built using React and Google Firebase.
+The main goal of this project was to practice TypeScript, Google Cloud Services, Framer Motion animations and web development best practices, e.g., semantic HTML.
 
-Currently, two official plugins are available:
+## Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Navigate to [Snapvault](https://snapvault.netlify.app/login) and log in
+
+## Authentication and Features
+
+The app allows for two ways of authenticating:
+
+- Registered user
+- Guest
+
+**Image upload is reserved for registered users**
